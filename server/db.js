@@ -34,8 +34,6 @@ const getLinks = (req,res)=>{
 //UPDATE LINKS
 const updateLink = (req,res)=>{
     const id = parseInt(req.params.id);
-    // const name = req.body.name;
-    // const url = req.body.url;
     const {name, url} = req.body;
 
     pool.query('UPDATE links SET name = $1, url = $2 WHERE id = $3',[name, url, id], (error, results)=>{
