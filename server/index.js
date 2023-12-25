@@ -4,6 +4,7 @@ const path = require('path')
 const app = express()
 const PORT = 3000
 const clientPath = path.resolve(__dirname, '../client/dist')
+const db = require('/.db')
 app.use(express.static(clientPath))
 
 app.get('/', (req, res) => {
